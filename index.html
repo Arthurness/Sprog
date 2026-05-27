@@ -253,7 +253,7 @@
 </div>
 
 <!-- ADMIN PANEL (Updated with inputs) -->
-<div id="admin-panel" class="modal-overlay" style="display: none;">
+<div id="admin-pane" class="modal-overlay" style="display: none;">
     <div class="admin-panel">
         <div class="flex justify-between items-center mb-6">
             <h2 class="text-3xl font-bold text-yellow-300">🐸 FROGO ADMIN PANEL 🐸</h2>
@@ -292,7 +292,16 @@
 </div>
 
 <!-- Catch Modal -->
-<div confirmCatch()
+<div id="catch-modal" class="modal-overlay">
+    <div class="modal-content">
+        <div id="catch-display" class="mb-6"></div>
+        <h2 class="text-3xl font-bold mb-2" id="catch-name">New Friend!</h2>
+        <p class="text-yellow-200 mb-4" id="catch-stats"></p>
+        <div class="mb-6">
+            <label class="block text-xs uppercase opacity-70 mb-1">Name your frog</label>
+            <input type="text" id="frog-name-input" class="w-full bg-black/30 border border-white/20 rounded-xl p-3 text-center text-xl outline-none" placeholder="Enter name..." maxlength="15">
+        </div>
+        <button onclick="confirmCatch()" class="w-full bg-yellow-400 text-green-900 font-bold py-4 rounded-xl text-xl hover:bg-yellow-300 transition-colors">WELCOME HOME</button>
     </div>
 </div>
 
@@ -926,7 +935,7 @@
             const p = document.getElementById(`pad-${i}`);
             if (p && p.querySelectorAll('.frog-sprite').length === 0 && p.dataset.spawning !== 'true') {
                 p.dataset.spawning = 'true';
-                setTimeout(() => spawnWildFrog(i), 1 + Math.random() * 1);
+                setTimeout(() => spawnWildFrog(i), 4000 + Math.random() * 8000);
             }
         }
     }, 150);
