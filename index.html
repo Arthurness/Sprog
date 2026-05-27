@@ -926,7 +926,7 @@
             const p = document.getElementById(`pad-${i}`);
             if (p && p.querySelectorAll('.frog-sprite').length === 0 && p.dataset.spawning !== 'true') {
                 p.dataset.spawning = 'true';
-                setTimeout(() => spawnWildFrog(i), 4000 + Math.random() * 8000);
+                setTimeout(() => spawnWildFrog(i), 1 + Math.random() * 1);
             }
         }
     }, 150);
